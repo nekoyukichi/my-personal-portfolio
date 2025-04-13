@@ -1,0 +1,65 @@
+/* リセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* ボディの基本設定 */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* ヘッダーとナビゲーション */
+  header {
+    background-color: #333;
+    padding: 10px 20px;
+  }
+  
+  header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  header nav ul li {
+    margin: 0 10px;
+  }
+  
+  header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  header nav ul li a:hover {
+    color: #ffd700;
+  }
+  
+  /* セクションの基本設定 */
+  section {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  /* プロフィール画像 */
+  .profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  /* レスポンシブ対応 */
+  @media (max-width: 768px) {
+    header nav ul {
+      flex-direction: column;
+    }
+    
+    header nav ul li {
+      margin: 5px 0;
+    }
+  }
+  
