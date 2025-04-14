@@ -1,47 +1,126 @@
-/* リセット */
-* {
+/* ==========================================================================
+   リセット＆基本設定
+   ========================================================================== */
+   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
-  /* ボディの基本設定 */
   body {
-    font-family: Arial, sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
   }
   
-  /* ヘッダーとナビゲーション */
-  header {
-    background-color: #333;
-    padding: 10px 20px;
+  /* ==========================================================================
+     コンテナ設定（中央寄せ、最大幅指定）
+     ========================================================================== */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
   }
   
-  header nav ul {
+  /* ==========================================================================
+     ヘッダー＆ナビゲーション
+     ========================================================================== */
+  .site-header {
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .main-nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
   }
   
-  header nav ul li {
-    margin: 0 10px;
+  .main-nav ul li {
+    margin: 0 15px;
   }
   
-  header nav ul li a {
+  .main-nav ul li a {
     color: #fff;
     text-decoration: none;
-    transition: color 0.3s;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
   }
   
-  header nav ul li a:hover {
+  .main-nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
     color: #ffd700;
   }
   
-  /* セクションの基本設定 */
+  .theme-switcher {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .theme-switcher:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* ==========================================================================
+     セクション共通設定
+     ========================================================================== */
   section {
     padding: 60px 20px;
     text-align: center;
   }
+  
+  /* 各セクションに固有のクラス名を設定（後のスタイリング用） */
+  .hero-section { 
+    background: url('../images/hero-background.jpg') no-repeat center center/cover;
+    position: relative;
+    min-height: 80vh;
+    color: #fff;
+  }
+  
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  
+  .hero-section .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  /* 自己紹介、スキル、プロジェクト、連絡先などのセクションはそれぞれ .about-section, .skills-section, .projects-section, .contact-section として扱う */
   
   /* プロフィール画像 */
   .profile img {
@@ -52,38 +131,9 @@
     margin-bottom: 20px;
   }
   
-  /* レスポンシブ対応 */
-  @media (max-width: 768px) {
-    header nav ul {
-      flex-direction: column;
-    }
-    
-    header nav ul li {
-      margin: 5px 0;
-    }
-  }
-
-/* 共通のアニメーション */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
-  }
-  
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* セクション毎のスタイル */
-  section {
-    padding: 60px 20px;
-    text-align: center;
-  }
-  
-  /* グリッドレイアウトの例（スキルやプロジェクトカード用） */
+  /* ==========================================================================
+     グリッドレイアウト（例：スキル・プロジェクトカード用）
+     ========================================================================== */
   .grid-container {
     display: grid;
     gap: 20px;
@@ -100,30 +150,58 @@
   
   .grid-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
   
-  /* ヘッダーの改善（例：ホバーアニメーション） */
-  header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+  /* ==========================================================================
+     フェードインアニメーション
+     ========================================================================== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
   }
   
-  header nav ul li a:hover {
-    background-color: #555;
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-
-/* ダークモード用スタイル */
-body.dark-mode {
-    background-color: #222;
+  
+  /* ==========================================================================
+     レスポンシブ対応
+     ========================================================================== */
+  @media (max-width: 768px) {
+    .main-nav ul {
+      flex-direction: column;
+    }
+    
+    .main-nav ul li {
+      margin: 5px 0;
+    }
+    
+    .hero-title {
+      font-size: 2.5rem;
+    }
+  }
+  
+  /* ==========================================================================
+     ダークモード用スタイル
+     ========================================================================== */
+  body.dark-mode {
+    background-color: #121212;
     color: #ddd;
   }
   
-  body.dark-mode header {
-    background-color: #111;
+  body.dark-mode .site-header {
+    background: linear-gradient(135deg, #232526, #414345);
+  }
+  
+  body.dark-mode .main-nav ul li a,
+  body.dark-mode .logo,
+  body.dark-mode .theme-switcher {
+    color: #ddd;
   }
   
   body.dark-mode .grid-item {
