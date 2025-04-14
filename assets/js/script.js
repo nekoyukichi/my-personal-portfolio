@@ -1,20 +1,15 @@
-// 初期スクリプト（今後のインタラクティブな機能追加用）
 document.addEventListener('DOMContentLoaded', () => {
     console.log('ポートフォリオページが読み込まれました');
     
-    // 今後、インタラクションやアニメーションの追加コードをここに記述していきます
-  });
-
-// ページロード時の初期処理
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('ページが読み込まれました');
-  
-    // ボタンクリックでテーマ切り替え
+    // テーマ切替ボタンの処理
     const themeSwitcher = document.getElementById('theme-switcher');
     if (themeSwitcher) {
       themeSwitcher.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
+        console.log('テーマ切替ボタンがクリックされました');
       });
     }
+    
+    // 今後追加予定: インタラクションやアニメーションの処理
   });
   
