@@ -4,41 +4,92 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Personal Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <!-- ヘッダー -->
   <header class="site-header">
     <div class="container">
-      <h1 class="logo">MyPortfolio</h1>
+      <h1 class="logo">
+        <span class="logo-text">My<span class="accent-color">Portfolio</span></span>
+        <span class="logo-icon"><i class="fas fa-code"></i></span>
+      </h1>
       <nav class="main-nav">
         <ul>
-          <li><a href="#home">ホーム</a></li>
-          <li><a href="#about">自己紹介</a></li>
-          <li><a href="#skills">スキル</a></li>
-          <li><a href="#projects">プロジェクト</a></li>
-          <li><a href="#contact">連絡先</a></li>
+          <li><a href="#home"><i class="fas fa-home"></i> ホーム</a></li>
+          <li><a href="#about"><i class="fas fa-user"></i> 自己紹介</a></li>
+          <li><a href="#skills"><i class="fas fa-code"></i> スキル</a></li>
+          <li><a href="#projects"><i class="fas fa-project-diagram"></i> プロジェクト</a></li>
+          <li><a href="#contact"><i class="fas fa-envelope"></i> 連絡先</a></li>
         </ul>
       </nav>
-      <button id="theme-switcher" class="theme-switcher">テーマ切替</button>
+      <button id="theme-switcher" class="theme-switcher">
+        <i class="fas fa-moon"></i>
+        <span>テーマ切替</span>
+      </button>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </header>
   
   <!-- ヒーローセクション -->
   <section id="home" class="hero-section">
+    <div class="particles-container" id="particles-js"></div>
     <div class="container">
-      <h2 class="hero-title">ようこそ、私のポートフォリオへ</h2>
-      <p class="hero-subtitle">ここでは私のスキルやプロジェクトを紹介しています。</p>
+      <div class="hero-content" data-aos="fade-up">
+        <h2 class="hero-title">ようこそ、私の<span class="gradient-text">ポートフォリオ</span>へ</h2>
+        <p class="hero-subtitle typing-animation">フロントエンド開発者 / デザイナー / クリエイター</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">プロジェクトを見る</a>
+          <a href="#contact" class="btn btn-secondary">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-down">
+      <span>スクロールダウン</span>
+      <i class="fas fa-chevron-down"></i>
     </div>
   </section>
   
   <!-- 自己紹介セクション -->
   <section id="about" class="about-section">
     <div class="container">
-      <h2>自己紹介</h2>
-      <div class="profile">
-        <img src="assets/images/profile.jpg" alt="プロフィール画像">
-        <p>こんにちは、○○です。Web開発を中心に、フロントエンドの技術に情熱を注いでいます。</p>
+      <h2 class="section-title" data-aos="fade-up">自己紹介</h2>
+      <div class="section-content">
+        <div class="profile-image" data-aos="fade-right">
+          <div class="image-wrapper">
+            <img src="assets/images/profile.jpg" alt="プロフィール画像">
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="profile-content" data-aos="fade-left">
+          <h3>こんにちは、<span class="highlight">○○</span>です！</h3>
+          <p class="bio">Web開発を中心に、フロントエンドの技術に情熱を注いでいます。ユーザーエクスペリエンスを重視したデザインと、モダンな技術を活用した開発が得意です。</p>
+          <div class="info-items">
+            <div class="info-item">
+              <i class="fas fa-calendar"></i>
+              <span>経験：3年</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>場所：東京</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-graduation-cap"></i>
+              <span>専門：フロントエンド開発</span>
+            </div>
+          </div>
+          <a href="#" class="btn btn-outline">履歴書をダウンロード <i class="fas fa-download"></i></a>
+        </div>
       </div>
     </div>
   </section>
@@ -46,33 +97,250 @@
   <!-- スキルセクション -->
   <section id="skills" class="skills-section">
     <div class="container">
-      <h2>スキル</h2>
-      <ul class="skills-list">
-        <li>HTML &amp; CSS</li>
-        <li>JavaScript</li>
-        <li>TypeScript</li>
-        <li>その他ツール（例：Git, Webpack）</li>
-      </ul>
+      <h2 class="section-title" data-aos="fade-up">スキル</h2>
+      <div class="skills-container">
+        <div class="skills-category" data-aos="fade-up">
+          <h3>フロントエンド</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-icon"><i class="fab fa-html5"></i></div>
+              <div class="skill-info">
+                <h4>HTML5</h4>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 90%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+              <div class="skill-info">
+                <h4>CSS3</h4>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 85%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="fab fa-js"></i></div>
+              <div class="skill-info">
+                <h4>JavaScript</h4>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="fab fa-react"></i></div>
+              <div class="skill-info">
+                <h4>React</h4>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 75%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
+          <h3>開発ツール</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+              <div class="skill-info">
+                <h4>Git</h4>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 85%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="fab fa-npm"></i></div>
+              <div class="skill-info">
+                <h4>npm/Webpack</h4>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="fas fa-terminal"></i></div>
+              <div class="skill-info">
+                <h4>Command Line</h4>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 75%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   
   <!-- プロジェクトセクション -->
   <section id="projects" class="projects-section">
     <div class="container">
-      <h2>プロジェクト</h2>
-      <p>これまでに取り組んだプロジェクトの実績を掲載しています。</p>
+      <h2 class="section-title" data-aos="fade-up">プロジェクト</h2>
+      <div class="projects-filter" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">すべて</button>
+        <button class="filter-btn" data-filter="web">Webアプリ</button>
+        <button class="filter-btn" data-filter="design">デザイン</button>
+        <button class="filter-btn" data-filter="other">その他</button>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card" data-category="web" data-aos="fade-up">
+          <div class="project-image">
+            <img src="assets/images/project1.jpg" alt="プロジェクト1">
+            <div class="project-overlay">
+              <div class="project-details">
+                <h3>ポートフォリオウェブサイト</h3>
+                <p>HTMLとCSSとJavaScriptを使用した個人ポートフォリオサイト</p>
+                <div class="project-links">
+                  <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                  <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+        
+        <div class="project-card" data-category="design" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-image">
+            <img src="assets/images/project2.jpg" alt="プロジェクト2">
+            <div class="project-overlay">
+              <div class="project-details">
+                <h3>UIデザインプロジェクト</h3>
+                <p>モダンなUIデザインのコンセプト</p>
+                <div class="project-links">
+                  <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                  <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="tag">UI/UX</span>
+            <span class="tag">Design</span>
+          </div>
+        </div>
+        
+        <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-image">
+            <img src="assets/images/project3.jpg" alt="プロジェクト3">
+            <div class="project-overlay">
+              <div class="project-details">
+                <h3>Webアプリケーション</h3>
+                <p>Reactを使用したインタラクティブなWebアプリ</p>
+                <div class="project-links">
+                  <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                  <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="tag">React</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   
   <!-- 連絡先セクション -->
   <section id="contact" class="contact-section">
     <div class="container">
-      <h2>連絡先</h2>
-      <p>ご連絡はメールアドレス
-        <a href="mailto:example@example.com">example@example.com</a> まで。</p>
+      <h2 class="section-title" data-aos="fade-up">連絡先</h2>
+      <div class="contact-container">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h3>メール</h3>
+              <p><a href="mailto:example@example.com">example@example.com</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h3>電話番号</h3>
+              <p>090-XXXX-XXXX</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h3>所在地</h3>
+              <p>東京都渋谷区</p>
+            </div>
+          </div>
+          <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="contact-form" data-aos="fade-left">
+          <form id="contactForm">
+            <div class="form-group">
+              <input type="text" id="name" name="name" placeholder="お名前" required>
+              <label for="name">お名前</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder="メールアドレス" required>
+              <label for="email">メールアドレス</label>
+            </div>
+            <div class="form-group">
+              <input type="text" id="subject" name="subject" placeholder="件名" required>
+              <label for="subject">件名</label>
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" placeholder="メッセージ" required></textarea>
+              <label for="message">メッセージ</label>
+            </div>
+            <button type="submit" class="btn btn-primary">送信する <i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
   
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h3 class="logo-text">My<span class="accent-color">Portfolio</span></h3>
+          <p>フロントエンド開発者 ○○のポートフォリオサイト</p>
+        </div>
+        <div class="footer-links">
+          <h3>クイックリンク</h3>
+          <ul>
+            <li><a href="#home">ホーム</a></li>
+            <li><a href="#about">自己紹介</a></li>
+            <li><a href="#skills">スキル</a></li>
+            <li><a href="#projects">プロジェクト</a></li>
+            <li><a href="#contact">連絡先</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 MyPortfolio. All Rights Reserved.</p>
+        <div class="back-to-top" id="backToTop">
+          <i class="fas fa-arrow-up"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
 </html>
