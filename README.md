@@ -31,7 +31,7 @@ It is responsive, stylish, and includes theme switching (dark/light mode).
 
 ## 🌐 Live Demo
 
-🔗 [https://nekoyukichi.github.io/my-personal-portfolio/](https://nekoyukichi.github.io/my-personal-portfolio/)
+🔗 [https://nekoyukichi.github.io/my-portfolio/](https://nekoyukichi.github.io/my-portfolio/)
 
 ## 🔧 How to Run Locally
 
